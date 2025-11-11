@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Playables;
-//using StarterAssets; // if you're using Starter Assets package
+using StarterAssets; // if you're using Starter Assets package
 
 public class CutsceneTrigger : MonoBehaviour
 {
