@@ -5217,7 +5217,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13892,9 +13892,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1818090187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba99069aa2bb174488975e22db54726, type: 3}
+  m_Script: {fileID: 11500000, guid: fe3495fb95a3ad74586632e6206e9847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeypadTrigger
+  keypadUI: {fileID: 231536697}
+  displayText: {fileID: 736718102}
+  correctCode: 1234
 --- !u!1001 &1825206580
 PrefabInstance:
   m_ObjectHideFlags: 0
