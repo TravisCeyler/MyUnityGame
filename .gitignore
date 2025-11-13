@@ -29,7 +29,6 @@ Recordings/
 *.tmp
 *.pdb
 *.mdb
-*.meta
 
 # ========== OS Files ==========
 .DS_Store
