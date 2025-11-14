@@ -30,6 +30,10 @@ Recordings/
 *.pdb
 *.mdb
 
+# ✅ KEEP meta files!  (Do NOT ignore *.meta)
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
 # ========== OS Files ==========
 .DS_Store
 Thumbs.db
