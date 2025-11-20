@@ -6,6 +6,8 @@ public class NPCAnimationController : MonoBehaviour
     public Animator animator;
     private NavMeshAgent agent;
 
+    public float moveSpeed = 0.0f; // Set this from your NPC AI script
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HotbarUI : MonoBehaviour
 {
@@ -10,20 +11,56 @@ public class HotbarUI : MonoBehaviour
     private int hotbarSize = 5;
 
     private int selectedSlot = 0;
-    public int SelectedSlot => selectedSlot; // readable by PlayerPickup
+    public int SelectedSlot => selectedSlot;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
     void Start()
     {
+        ConnectInventory();
+        RefreshHotbar();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ConnectInventory();
+        RefreshHotbar();
+    }
+
+    void ConnectInventory()
+    {
+        if (inventory == null)
+        {
+            inventory = FindObjectOfType<Inventory>();
+        }
+
         if (inventory != null)
         {
+            // Remove previous listeners first to avoid duplicates
+            inventory.onInventoryChangedCallback -= RefreshHotbar;
             inventory.onInventoryChangedCallback += RefreshHotbar;
-            RefreshHotbar();
+        }
+        else
+        {
+            Debug.LogWarning("HotbarUI could not find Inventory in scene.");
         }
     }
 
     void Update()
     {
-        // Select hotbar slots using 1-5
         for (int i = 0; i < hotbarSize; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))

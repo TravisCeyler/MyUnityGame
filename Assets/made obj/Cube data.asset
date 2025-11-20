@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c069f85732a9ae4180d6a8f53538e91, type: 3}
-  m_Name: cube
+  m_Name: Cube data
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: cube
+  itemName: Cube
   icon: {fileID: 21300000, guid: 1d22800a2c3105840bbac346df53ac48, type: 3}
-  prefabReference: {fileID: 4667789854541729814, guid: 0b779df786120cd4eac1233d828806ef, type: 3}
+  prefabReference: {fileID: 6571358864228669992, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}

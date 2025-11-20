@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8527028352868288239}
   - component: {fileID: 7346043575683768495}
   - component: {fileID: 5693605864518776367}
-  - component: {fileID: 6026325364666098366}
+  - component: {fileID: 3221902371032051051}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -115,7 +115,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6026325364666098366
+--- !u!114 &3221902371032051051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,13 +124,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382862820814711741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f57a1021899654f95286eb7ca10419, type: 3}
+  m_Script: {fileID: 11500000, guid: 841adbf6f39a12f4fb663e217eaae333, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DualButton
+  m_EditorClassIdentifier: Assembly-CSharp::buttionClick
   mode: 2
   staysDown: 0
   detectionRange: 2
-  overlapSize: {x: 1.1, y: 0.5, z: 1.1}
+  overlapSize: {x: 1.5, y: 1, z: 1.5}
   overlapCenterOffset: {x: 0, y: 0, z: 0}
   overlapMask:
     serializedVersion: 2
@@ -142,7 +142,7 @@ MonoBehaviour:
   interactKey: 101
   buttonVisual: {fileID: 7775790539142298397}
   pressedOffset: {x: 0, y: -1, z: 0}
-  pressSpeed: 5
+  pressSpeed: 25
   resetDelay: 0.6
   promptUI: {fileID: 0}
   audioSource: {fileID: 0}
@@ -204,6 +204,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  useCollision: 1
+  playerTag: Player
 --- !u!1 &3073004200438391319
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +216,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2811299618548012087}
   - component: {fileID: 3933233332884833151}
-  - component: {fileID: 3718292314851074560}
   - component: {fileID: 7996837122741323301}
+  - component: {fileID: 5239537538991381514}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -259,57 +261,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3718292314851074560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3073004200438391319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f57a1021899654f95286eb7ca10419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DualButton
-  mode: 0
-  staysDown: 0
-  detectionRange: 2
-  overlapSize: {x: 1, y: 0.5, z: 1}
-  overlapCenterOffset: {x: 0, y: 0, z: 0}
-  overlapMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  useOverlapBox: 1
-  pressureTags:
-  - Player
-  - Pickup
-  interactKey: 101
-  buttonVisual: {fileID: 7775790539142298397}
-  pressedOffset: {x: 0, y: -1, z: 0}
-  pressSpeed: 5
-  resetDelay: 0.6
-  promptUI: {fileID: 0}
-  audioSource: {fileID: 0}
-  activateSound: {fileID: 0}
-  deactivateSound: {fileID: 0}
-  onActivate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3397429353043209684}
-        m_TargetAssemblyTypeName: TeleportOnButton, Assembly-CSharp
-        m_MethodName: TeleportPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!54 &7996837122741323301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -337,6 +288,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5239537538991381514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073004200438391319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841adbf6f39a12f4fb663e217eaae333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buttionClick
+  mode: 2
+  staysDown: 0
+  detectionRange: 2
+  overlapSize: {x: 1.5, y: 1, z: 1.5}
+  overlapCenterOffset: {x: 0, y: 0, z: 0}
+  overlapMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  useOverlapBox: 1
+  pressureTags:
+  - Player
+  - Pickup
+  interactKey: 101
+  buttonVisual: {fileID: 7775790539142298397}
+  pressedOffset: {x: 0, y: -1, z: 0}
+  pressSpeed: 25
+  resetDelay: 0.6
+  promptUI: {fileID: 0}
+  audioSource: {fileID: 0}
+  activateSound: {fileID: 0}
+  deactivateSound: {fileID: 0}
+  onActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6055445303885221451
 GameObject:
   m_ObjectHideFlags: 0
