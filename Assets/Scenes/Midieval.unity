@@ -17681,6 +17681,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.033580456, y: 0.052196432, z: 0.034989133}
   m_Center: {x: 0.000032056123, y: -0.0000009266658, z: 0.017494563}
+--- !u!1001 &888168819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 487.63538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.756033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -437.1681
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469997807357134719, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571358864228669992, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
+      propertyPath: m_Name
+      value: Cube 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff01d0b3da8a25047b9cee5108d4ac43, type: 3}
 --- !u!1001 &888867228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21540,6 +21597,54 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &954918245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954918247}
+  - component: {fileID: 954918246}
+  m_Layer: 0
+  m_Name: SceneTeleportEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &954918246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954918245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117764d17a591b24ab8d523e8375e0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTeleportEvent
+  sceneToLoad: Ancient Egypt
+  useSpawnPosition: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  verboseDebug: 1
+--- !u!4 &954918247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954918245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 488.02234, y: 11.75779, z: -278.58978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955099670
 GameObject:
   m_ObjectHideFlags: 0
@@ -35900,6 +36005,21 @@ MonoBehaviour:
   keypadUI: {fileID: 231536697}
   displayText: {fileID: 736718102}
   correctCode: 1234
+  onCorrectCode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 954918246}
+        m_TargetAssemblyTypeName: SceneTeleportEvent, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1825206580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39341,6 +39461,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360e1c77f068bca41b96868b50e92055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
+  npcType: 0
+  itemToGive: {fileID: 0}
+  giveAmount: 1
+  giveOnlyOnce: 1
+  itemRequested: {fileID: 0}
+  requestedAmount: 1
+  giveButton: {fileID: 0}
+  declineButton: {fileID: 0}
   npcName: Guard
   dialogueLines:
   - Welcome to the city, traveler.
@@ -39350,9 +39478,11 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1142314402}
   npcNameText: {fileID: 1142314401}
   dialogueTextUI: {fileID: 1142314400}
+  takeItemButton: {fileID: 0}
   typingSpeed: 0.03
   player: {fileID: 0}
   lookSpeed: 5
+  playerInventoryManual: {fileID: 0}
 --- !u!114 &2027461741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41201,3 +41331,5 @@ SceneRoots:
   - {fileID: 726453851}
   - {fileID: 1142314398}
   - {fileID: 2009209868}
+  - {fileID: 954918247}
+  - {fileID: 888168819}

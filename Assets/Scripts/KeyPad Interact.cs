@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class KeypadTrigger : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class KeypadTrigger : MonoBehaviour
 
     private bool playerNearby = false;
     private string enteredCode = "";
+    public UnityEvent onCorrectCode;
 
     void Update()
     {
@@ -46,6 +48,7 @@ public class KeypadTrigger : MonoBehaviour
         if (enteredCode == correctCode)
         {
             Debug.Log("✅ Correct Code! Event triggered!");
+            onCorrectCode.Invoke(); 
             // You can call any event here, like opening a door
         }
         else
