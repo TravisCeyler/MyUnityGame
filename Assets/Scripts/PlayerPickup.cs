@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -13,13 +14,50 @@ public class PlayerPickup : MonoBehaviour
     public HotbarUI hotbarUI; // assign in inspector
 
     private GameObject heldObject;
-    private Inventory inventory;
+    [SerializeField] private Inventory inventory;
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
     void Start()
     {
-        inventory = FindObjectOfType<Inventory>();
         if (inventory == null)
+        {
+            inventory = FindObjectOfType<Inventory>();
             Debug.LogError("No Inventory found in scene!");
+        }
+        
+        inventory.ClearInventory();
+            
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        heldObject = null; // reset any old held object
+        FindInventory();
+    }
+
+    void FindInventory()
+    {
+        // Look in DontDestroyOnLoad objects
+    Inventory inv = FindAnyObjectByType<Inventory>(FindObjectsInactive.Include);
+
+    if (inv == null)
+    {
+        Debug.LogError("❌ PlayerPickup could NOT find Inventory anywhere!");
+    }
+    else
+    {
+        inventory = inv;
+        Debug.Log("✔ PlayerPickup connected to Inventory (DontDestroyOnLoad)");
+    }
     }
 
     void Update()
@@ -116,10 +154,23 @@ public class PlayerPickup : MonoBehaviour
     }
 
     void DropSelectedInventoryItem()
-    {
-        if (inventory == null || hotbarUI == null) return;
+{
+    if (inventory == null || hotbarUI == null) return;
 
-        int slot = hotbarUI.SelectedSlot;
-        inventory.DropItem(slot, holdPoint);
+    int slot = hotbarUI.SelectedSlot;
+
+    if (slot < 0 || slot >= inventory.slots.Length)
+    {
+        Debug.LogWarning("No slot selected!");
+        return;
     }
+
+    if (inventory.slots[slot].item == null)
+    {
+        Debug.Log("Selected slot is empty.");
+        return;
+    }
+
+    inventory.DropItem(slot, holdPoint);
+}
 }

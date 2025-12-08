@@ -2,9 +2,28 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.AI;   // NEW – for stopping the NPC
+using UnityEngine.UI;
 
 public class NPCInteraction : MonoBehaviour
 {
+    public enum NPCType { None, Giver, Receiver }
+    [Header("NPC Type")]
+    public NPCType npcType = NPCType.None;
+
+    [Header("Give Item Settings (For Giver NPC)")]
+    public ItemData itemToGive;
+    public int giveAmount = 1;
+    public bool giveOnlyOnce = true;
+    private bool hasGiven = false;
+
+    [Header("Receiver Settings (For NPC that asks for an item)")]
+    public ItemData itemRequested;
+    public int requestedAmount = 1;
+
+    [Header("Receiver UI Buttons")]
+    public GameObject giveButton;
+    public GameObject declineButton;
+
     [Header("NPC Info")]
     public string npcName = "Guard";
     [TextArea(3, 10)]
@@ -19,6 +38,9 @@ public class NPCInteraction : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text npcNameText;
     public TMP_Text dialogueTextUI;
+
+    [Header("Give Item Button")]
+    public Button takeItemButton;   // <- ADD THIS BUTTON
 
     [Header("Typing Effect")]
     public float typingSpeed = 0.03f;
@@ -36,10 +58,19 @@ public class NPCInteraction : MonoBehaviour
     private NavMeshAgent agent;  // NEW
     private Animator anim;       // Optional if your NPC has animations
 
+    private Inventory playerInventory;   // <-- REAL inventory script
+
+    [Header("References")]
+    public Inventory playerInventoryManual;
+
+
     void Start()
     {
         if (interactPrompt != null) interactPrompt.SetActive(false);
         if (dialoguePanel != null) dialoguePanel.SetActive(false);
+
+        if (giveButton != null) giveButton.SetActive(false);
+        if (declineButton != null) declineButton.SetActive(false);
 
         agent = GetComponent<NavMeshAgent>(); // NEW
         anim = GetComponent<Animator>();      // NEW (optional)
@@ -50,6 +81,19 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.transform; // NEW
+
+            GameObject sm = GameObject.Find("ScriptManager");
+            if (sm != null)
+            {
+            playerInventory = sm.GetComponent<Inventory>();
+            if (playerInventory == null)
+                Debug.LogError("No Inventory component found on ScriptManager!");
+            }
+            else
+            {
+                Debug.LogError("No GameObject named ScriptManager found in scene!");
+            }
+
             isPlayerInRange = true;
             if (!isDialogueOpen && interactPrompt != null)
                 interactPrompt.SetActive(true);
@@ -114,6 +158,9 @@ public class NPCInteraction : MonoBehaviour
             npcNameText.text = npcName;
             StartTyping(dialogueLines[currentLineIndex]);
         }
+
+        Cursor.lockState = CursorLockMode.None;   // unlock mouse
+        Cursor.visible = true;   
     }
 
     void StartTyping(string text)
@@ -153,11 +200,131 @@ public class NPCInteraction : MonoBehaviour
         if (currentLineIndex < dialogueLines.Length)
         {
             StartTyping(dialogueLines[currentLineIndex]);
+            return;
+        }
+        
+        HandleEndOfDialogue();
+    }
+
+    void HandleEndOfDialogue()
+    {
+        if (npcType == NPCType.Giver)
+        {
+            ShowGiveButton();
+        }
+        else if (npcType == NPCType.Receiver)
+        {
+            ShowReceiverOptions();
         }
         else
         {
             CloseDialogue();
         }
+    }
+
+    void ShowGiveButton()
+    {
+        if (giveOnlyOnce && hasGiven)
+        {
+            CloseDialogue();
+            return;
+        }
+
+        giveButton.SetActive(true);
+        giveButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        giveButton.GetComponent<Button>().onClick.AddListener(GiveItemToPlayer);
+    }
+
+    void GiveItemToPlayer()
+    {
+        playerInventory.AddItem(itemToGive, giveAmount);
+
+        hasGiven = true;
+        giveButton.SetActive(false);
+
+        CloseDialogue();
+    }
+    void ShowReceiverOptions()
+    {
+        giveButton.SetActive(true);
+        declineButton.SetActive(true);
+
+        giveButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        declineButton.GetComponent<Button>().onClick.RemoveAllListeners();
+
+        giveButton.GetComponent<Button>().onClick.AddListener(ButtonGiveItem);
+        declineButton.GetComponent<Button>().onClick.AddListener(ButtonDecline);
+    }
+
+    public void ButtonGiveItem()
+{
+    if (playerInventory == null)
+    {
+        Debug.LogError("Player inventory is NULL!");
+        return;
+    }
+
+    if (playerInventory.HasItem(itemRequested, requestedAmount))
+    {
+        playerInventory.RemoveItem(itemRequested, requestedAmount);
+        Debug.Log("Item given to NPC!");
+    }
+    else
+    {
+        Debug.Log("Player does NOT have the item!");
+    }
+
+    giveButton.SetActive(false);
+    declineButton.SetActive(false);
+    CloseDialogue();
+}
+
+    bool PlayerHasItem()
+    {
+        int total = 0;
+
+        foreach (var slot in playerInventory.slots)
+        {
+            if (slot.item != null && slot.item.itemData == itemRequested)
+            {
+                total += slot.item.amount;
+                if (total >= requestedAmount)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    void RemoveRequestedItem()
+    {
+        int amountToRemove = requestedAmount;
+
+        for (int i = 0; i < playerInventory.slots.Length; i++)
+        {
+            var slot = playerInventory.slots[i].item;
+            if (slot != null && slot.itemData == itemRequested)
+            {
+                int take = Mathf.Min(slot.amount, amountToRemove);
+                slot.amount -= take;
+                amountToRemove -= take;
+
+                if (slot.amount <= 0)
+                    playerInventory.slots[i].item = null;
+
+                if (amountToRemove <= 0)
+                    break;
+            }
+        }
+        
+        playerInventory.AddItem(itemToGive, giveAmount);
+    }
+
+    public void ButtonDecline()
+    {
+        giveButton.SetActive(false);
+        declineButton.SetActive(false);
+
+        CloseDialogue();
     }
 
     void CloseDialogue()
@@ -172,5 +339,8 @@ public class NPCInteraction : MonoBehaviour
             StopCoroutine(typingCoroutine);
 
         if (agent != null) agent.isStopped = false; // NEW – resume walking
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;  
     }
 }
