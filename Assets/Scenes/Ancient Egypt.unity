@@ -28070,6 +28070,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: npcName
+      value: Royal King
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: npcType
       value: 2
       objectReference: {fileID: 0}
@@ -28101,6 +28105,30 @@ PrefabInstance:
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 394069134}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: 'dialogueLines.Array.data[0]'
+      value: Place a coin in my grasp, wanderer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: 'dialogueLines.Array.data[1]'
+      value: Let its weight testify to your respect for crown and cosmos.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: 'dialogueLines.Array.data[2]'
+      value: For even Ra, who sails the heavens in his golden barque
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: 'dialogueLines.Array.data[3]'
+      value: counts the offerings of mortals.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
+      propertyPath: 'dialogueLines.Array.data[4]'
+      value: "Give, and may the gods carve your name upon the winds of good fortune.\u201D"
+      objectReference: {fileID: 0}
     - target: {fileID: 5323646019866562201, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: m_Enabled
       value: 0
