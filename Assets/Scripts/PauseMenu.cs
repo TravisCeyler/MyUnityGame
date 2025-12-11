@@ -152,13 +152,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
-<<<<<<< Updated upstream
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        SceneManager.LoadScene("MainMenu");
-=======
         SceneManager.LoadScene("Main Menu");
->>>>>>> Stashed changes
     }
 
     public void QuitGame()

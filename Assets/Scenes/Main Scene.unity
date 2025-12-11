@@ -11767,8 +11767,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 806231699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!43 &607091093
 Mesh:
   m_ObjectHideFlags: 0
@@ -11947,7 +11945,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
->>>>>>> Stashed changes
 --- !u!1 &621528635
 GameObject:
   m_ObjectHideFlags: 0
@@ -16271,7 +16268,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 318119515}
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
-<<<<<<< Updated upstream
       propertyPath: npcType
       value: 0
       objectReference: {fileID: 0}
@@ -16291,22 +16287,14 @@ PrefabInstance:
       propertyPath: declineButton
       value: 
       objectReference: {fileID: 1497570936}
-=======
-      propertyPath: npcNameText
-      value: 
-      objectReference: {fileID: 8661090797135473843}
->>>>>>> Stashed changes
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 2326497463105673257}
-<<<<<<< Updated upstream
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: itemRequested
       value: 
       objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: dialogueTextUI
       value: 
@@ -16315,7 +16303,6 @@ PrefabInstance:
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 310931146693318586}
-<<<<<<< Updated upstream
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: takeItemButton
       value: 
@@ -16324,8 +16311,6 @@ PrefabInstance:
       propertyPath: playerInventoryManual
       value: 
       objectReference: {fileID: 93045558}
-=======
->>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16581,24 +16566,18 @@ PrefabInstance:
       propertyPath: npcNameText
       value: 
       objectReference: {fileID: 8661090797135473843}
-<<<<<<< Updated upstream
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: declineButton
       value: 
       objectReference: {fileID: 1497570936}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 2326497463105673257}
-<<<<<<< Updated upstream
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: itemRequested
       value: 
       objectReference: {fileID: 11400000, guid: 541f1ac9c5d106341b7a01198e103ec8, type: 2}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: dialogueTextUI
       value: 
@@ -16607,13 +16586,10 @@ PrefabInstance:
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 310931146693318586}
-<<<<<<< Updated upstream
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: playerInventoryManual
       value: 
       objectReference: {fileID: 93045558}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 3894465722919976206, guid: 791bd564d2150d94c9aca097c16b85c2, type: 3}
       propertyPath: dialogueLines.Array.size
       value: 5
@@ -25255,8 +25231,6 @@ MonoBehaviour:
   m_EditMode: 0
   m_FlipNormals: 0
   isOnGrid: 1
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1460464323
 GameObject:
   m_ObjectHideFlags: 0
@@ -25668,7 +25642,6 @@ MonoBehaviour:
   useSpawnPosition: 0
   playerTag: Player
   verboseDebug: 1
->>>>>>> Stashed changes
 --- !u!1 &1460474953
 GameObject:
   m_ObjectHideFlags: 0
@@ -36334,13 +36307,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3823412905236168357}
     - target: {fileID: 5695909512357437045, guid: 3eae0ad3bfc3d0347906275880bf3af6, type: 3}
-<<<<<<< Updated upstream
       propertyPath: inventory
       value: 
       objectReference: {fileID: 93045558}
     - target: {fileID: 5695909512357437045, guid: 3eae0ad3bfc3d0347906275880bf3af6, type: 3}
-=======
->>>>>>> Stashed changes
       propertyPath: pickupLayer.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -36379,11 +36349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2706254384683485643, guid: 83a7970dc495bdd43a6a925440b3e46d, type: 3}
       propertyPath: m_Name
-<<<<<<< Updated upstream
       value: ScriptManager
-=======
-      value: SciptManager
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3857946062894321321, guid: 83a7970dc495bdd43a6a925440b3e46d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36456,7 +36422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76657d15c4981a248a96d267ac2b2bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HotbarUI
-<<<<<<< Updated upstream
 --- !u!1001 &4428207436381885744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36542,8 +36507,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 459510edc6202c14e81eb94db03007a8, type: 3}
-=======
->>>>>>> Stashed changes
 --- !u!1 &5683397725147522423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3755631162140878735, guid: 862489b2359f4714db4044123ae0e159, type: 3}
@@ -36645,7 +36608,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 1533352818136317143, guid: 862489b2359f4714db4044123ae0e159, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -36674,8 +36636,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 3755631162140878735, guid: 862489b2359f4714db4044123ae0e159, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -36704,7 +36664,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 6037752887163817512, guid: 862489b2359f4714db4044123ae0e159, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -55
@@ -36713,13 +36672,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 81
       objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 6254400453708433507, guid: 862489b2359f4714db4044123ae0e159, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 93045559}
-<<<<<<< Updated upstream
     - target: {fileID: 6738775609487197362, guid: 862489b2359f4714db4044123ae0e159, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 156
@@ -36756,8 +36712,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36797,13 +36751,7 @@ SceneRoots:
   - {fileID: 839599024}
   - {fileID: 854918185}
   - {fileID: 713756534768190359}
-<<<<<<< Updated upstream
-  - {fileID: 1995830478}
-  - {fileID: 322388012}
-  - {fileID: 4428207436381885744}
-=======
   - {fileID: 1918792693}
   - {fileID: 1460464330}
   - {fileID: 1995830478}
   - {fileID: 322388012}
->>>>>>> Stashed changes

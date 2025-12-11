@@ -176537,71 +176537,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1634346593}
   m_SourcePrefab: {fileID: 100100000, guid: ebf0fd41e5046f74bb6d4ecc7b307de0, type: 3}
---- !u!1 &947103398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2722015917942348423, guid: 459510edc6202c14e81eb94db03007a8, type: 3}
-  m_PrefabInstance: {fileID: 1338913440}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &947103399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947103398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0bd4fbca1bc2a4c90ef2225d3e0249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTeleportStarter
-  sceneToLoad: Main Scene
-  spawnPosition: {x: 0, y: 0, z: 0}
-  useSpawnPosition: 0
-  playerTag: Player
-  verboseDebug: 1
---- !u!64 &947103401
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947103398}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!65 &947103402
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947103398}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &947371994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -300387,33 +300322,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 668869569556866777, guid: d31ffb30d0b47b4478856fedefa96c19, type: 3}
---- !u!1 &1633605038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
-  m_PrefabInstance: {fileID: 1039225750}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1633605045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633605038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7882dbd7f65124fa46546a4cc6a825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickup
-  holdPoint: {fileID: 416936616}
-  pickupRange: 3
-  pickupLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  pickupKey: 101
-  addToInventoryKey: 102
-  dropInventoryKey: 103
-  hotbarUI: {fileID: 0}
-  inventory: {fileID: 0}
 --- !u!1001 &1634327019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395029,21 +394937,9 @@ SceneRoots:
   - {fileID: 2020048723}
   - {fileID: 372228849}
   - {fileID: 316121660}
-  - {fileID: 2034762443}
-  - {fileID: 1948474699}
-  - {fileID: 1499823168}
-  - {fileID: 298445918}
-  - {fileID: 1956593443}
-  - {fileID: 564141624}
-  - {fileID: 378038542}
-  - {fileID: 1927841163}
-  - {fileID: 944371840}
-  - {fileID: 1804309149}
-  - {fileID: 209954891}
-  - {fileID: 845596565}
-  - {fileID: 981862830}
-  - {fileID: 1898575064}
-  - {fileID: 1211467310}
-  - {fileID: 1982306691}
-  - {fileID: 1338913440}
-  - {fileID: 996565466}
+  - {fileID: 1951949260}
+  - {fileID: 1997028842}
+  - {fileID: 1658455835}
+  - {fileID: 1209274479}
+  - {fileID: 8967203183702451156}
+  - {fileID: 1118982560}
