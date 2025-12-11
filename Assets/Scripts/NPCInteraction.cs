@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.AI;   // NEW – for stopping the NPC
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class NPCInteraction : MonoBehaviour
 {
@@ -48,6 +49,9 @@ public class NPCInteraction : MonoBehaviour
     [Header("Look Settings")]   // NEW
     public Transform player;    // Reference to the player
     public float lookSpeed = 5f;
+
+    [Header("Events")]
+    public UnityEvent onItemGivenToNPC;
 
     private bool isPlayerInRange = false;
     private bool isDialogueOpen = false;
@@ -268,6 +272,8 @@ public class NPCInteraction : MonoBehaviour
     {
         playerInventory.RemoveItem(itemRequested, requestedAmount);
         Debug.Log("Item given to NPC!");
+
+        onItemGivenToNPC?.Invoke();
     }
     else
     {
