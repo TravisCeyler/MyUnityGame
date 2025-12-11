@@ -14,6 +14,9 @@ public class SceneTeleportStarter : MonoBehaviour
     [Header("Debug")]
     public bool verboseDebug = true;
 
+    [Header("Level Completion")]
+    public int levelNumberToComplete = -1;   // -1 = no level linked
+
     private void Start()
     {
         // Ensure teleporter has a trigger collider
@@ -87,6 +90,17 @@ public class SceneTeleportStarter : MonoBehaviour
             Debug.LogError($"[{name}] sceneToLoad is empty — can't load scene.");
             return;
         }
+
+        // Mark level as complete, if assigned
+        if (levelNumberToComplete >= 0)
+        {
+            LevelTracker tracker = FindObjectOfType<LevelTracker>();
+            if (tracker != null)
+                tracker.CompleteLevel(levelNumberToComplete);
+            else
+            Debug.LogWarning("No LevelTracker found in scene!");
+        }
+
 
         // Load scene
         SceneManager.LoadScene(sceneToLoad);
