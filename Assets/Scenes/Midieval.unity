@@ -40291,6 +40291,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eae0ad3bfc3d0347906275880bf3af6, type: 3}
+--- !u!4 &2009209869 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4670726887193099010, guid: 3eae0ad3bfc3d0347906275880bf3af6, type: 3}
+  m_PrefabInstance: {fileID: 2009209868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2015880029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40364,130 +40369,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6527966746742178781, guid: 9ef95eb74fbef4145bc387e83b897495, type: 3}
   m_PrefabInstance: {fileID: 1115924747}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2027461733 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1913321603754041041, guid: 0da600d002dc6404693c3b74e0265a3c, type: 3}
-  m_PrefabInstance: {fileID: 1497944935}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2027461736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350b60330c46ee9459add1c0049ddaeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCWander
-  wanderRadius: 10
-  wanderDelay: 5
---- !u!195 &2027461737
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &2027461738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea75ca3a461c064aa507c85b9e2871f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCPushable
-  pushForce: 2
---- !u!54 &2027461739
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &2027461740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360e1c77f068bca41b96868b50e92055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCInteraction
-  npcName: Guard
-  dialogueLines:
-  - Welcome to the city, traveler.
-  - Be careful, the streets are dangerous at night.
-  - If you need supplies, visit the market by the gate.
-  interactPrompt: {fileID: 1142314399}
-  dialoguePanel: {fileID: 1142314402}
-  npcNameText: {fileID: 1142314401}
-  dialogueTextUI: {fileID: 1142314400}
-  typingSpeed: 0.03
-  player: {fileID: 0}
-  lookSpeed: 5
---- !u!114 &2027461741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027461733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42706f03bd21777498afe81590dec111, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimationController
-  animator: {fileID: 1497944936}
-  moveSpeed: 0
---- !u!4 &2027461742 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1280899642068255851, guid: 0da600d002dc6404693c3b74e0265a3c, type: 3}
-  m_PrefabInstance: {fileID: 1497944935}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2046762661
 PrefabInstance:
