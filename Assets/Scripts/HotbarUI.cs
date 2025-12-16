@@ -15,7 +15,7 @@ public class HotbarUI : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
@@ -42,10 +42,7 @@ public class HotbarUI : MonoBehaviour
 
     void ConnectInventory()
     {
-        if (inventory == null)
-        {
-            inventory = FindObjectOfType<Inventory>();
-        }
+        inventory = Inventory.Instance;
 
         if (inventory != null)
         {
