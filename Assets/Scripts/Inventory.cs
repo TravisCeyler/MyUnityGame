@@ -10,30 +10,45 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     public int maxSlots = 20;
+
+    [System.NonSerialized]
     public InventorySlot[] slots;
 
     public delegate void OnInventoryChanged();
     public event OnInventoryChanged onInventoryChangedCallback;
 
-    void Awake()
+   void Awake()
+{
+    // Singleton setup
+    if (Instance != null && Instance != this)
     {
-        // Singleton persistence
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject); // destroy duplicates
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        if (slots == null || slots.Length != maxSlots)
-        {
-            slots = new InventorySlot[maxSlots];
-            for (int i = 0; i < maxSlots; i++)
-                slots[i] = new InventorySlot();
-        }
+        Destroy(gameObject); // Destroy duplicates
+        return;
     }
+
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+
+    // Ensure we have the right number of slots
+
+   BuildSlots();
+}
+
+void BuildSlots()
+{
+    slots = new InventorySlot[maxSlots];
+    for (int i = 0; i < maxSlots; i++)
+    {
+        slots[i] = new InventorySlot();
+        slots[i].item = null;
+    }
+    Debug.Log("Inventory initialized with empty slots");
+}
+
+void Start()
+{
+    ClearInventory(); // 💥 THIS IS THE FIX
+}
 
     public bool AddItem(ItemData newItemData, int amount = 1)
     {

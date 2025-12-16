@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5787578789177753262}
   - component: {fileID: 5333573516147567797}
   - component: {fileID: 7026995625705768666}
+  - component: {fileID: -1378949415109708129}
   m_Layer: 0
   m_Name: SciptManager
   m_TagString: Untagged
@@ -47,7 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   maxSlots: 20
-  slots: []
 --- !u!114 &5333573516147567797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,9 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d37f8e70e16a04aa990646dd5f2d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  pauseMenuRoot: {fileID: 0}
   pauseMenuUI: {fileID: 0}
-  playerInventory: {fileID: 5787578789177753262}
-  playerTransform: {fileID: 0}
 --- !u!114 &7026995625705768666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +74,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ee841d141afc2459e13287170593a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
+--- !u!114 &-1378949415109708129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706254384683485643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ffb57c8a98beea40b2f9e4da9b980ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelTracker
+  levelCompleted: 00000000000000000000

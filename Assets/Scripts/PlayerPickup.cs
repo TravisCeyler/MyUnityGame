@@ -28,37 +28,20 @@ public class PlayerPickup : MonoBehaviour
 
     void Start()
     {
+        inventory = Inventory.Instance;
         if (inventory == null)
         {
-            inventory = FindObjectOfType<Inventory>();
             Debug.LogError("No Inventory found in scene!");
         }
-        
-        inventory.ClearInventory();
             
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         heldObject = null; // reset any old held object
-        FindInventory();
     }
 
-    void FindInventory()
-    {
-        // Look in DontDestroyOnLoad objects
-    Inventory inv = FindAnyObjectByType<Inventory>(FindObjectsInactive.Include);
-
-    if (inv == null)
-    {
-        Debug.LogError("❌ PlayerPickup could NOT find Inventory anywhere!");
-    }
-    else
-    {
-        inventory = inv;
-        Debug.Log("✔ PlayerPickup connected to Inventory (DontDestroyOnLoad)");
-    }
-    }
+    
 
     void Update()
     {
@@ -117,23 +100,28 @@ public class PlayerPickup : MonoBehaviour
     }
 
     void AddHeldObjectToInventory()
+{
+    if (heldObject == null) return;
+
+    if (!heldObject.TryGetComponent(out PickupItem pickup))
+        return;
+
+    bool added = inventory.AddItem(pickup.itemData, 1);
+
+    if (!added)
     {
-        if (heldObject == null) return;
-
-        if (heldObject.TryGetComponent(out PickupItem pickup))
-        {
-            inventory.AddItem(pickup.itemData, 1);
-
-            if (heldObject.TryGetComponent(out WorldItem worldItem))
-            {
-                SaveSystem.RegisterCollectedItem(worldItem.uniqueID);
-                Debug.Log($"🗂 Registered collected item: {worldItem.uniqueID}");
-            }
-        }
-
-        Destroy(heldObject);
-        heldObject = null;
+        Debug.Log("Cannot add item, inventory full!");
+        return; // 🚨 DO NOT DESTROY
     }
+
+    if (heldObject.TryGetComponent(out WorldItem worldItem))
+    {
+        SaveSystem.RegisterCollectedItem(worldItem.uniqueID);
+    }
+
+    Destroy(heldObject);
+    heldObject = null;
+}
 
     void DropHeldObject()
     {
@@ -155,7 +143,7 @@ public class PlayerPickup : MonoBehaviour
 
     void DropSelectedInventoryItem()
 {
-    if (inventory == null || hotbarUI == null) return;
+    if (inventory == null || hotbarUI == null || holdPoint == null) return;
 
     int slot = hotbarUI.SelectedSlot;
 
@@ -165,7 +153,7 @@ public class PlayerPickup : MonoBehaviour
         return;
     }
 
-    if (inventory.slots[slot].item == null)
+    if (inventory.slots[slot].item == null || inventory.slots[slot].item == null)
     {
         Debug.Log("Selected slot is empty.");
         return;
