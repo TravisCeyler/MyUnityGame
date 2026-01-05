@@ -1,0 +1,43 @@
+# ========== Unity Essentials ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# ========== Visual Studio / VS Code ==========
+.vscode/
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+*.svd
+*.userprefs
+*.db
+*.opendb
+
+# ========== Unity Cache / Auto Generated ==========
+*.bak
+*.tmp
+*.pdb
+*.mdb
+
+# ✅ KEEP meta files!  (Do NOT ignore *.meta)
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
+# ========== OS Files ==========
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========== Package Manager ==========
+Packages/packages-lock.json
