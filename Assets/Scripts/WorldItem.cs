@@ -11,4 +11,11 @@ public class WorldItem : MonoBehaviour
         if (string.IsNullOrEmpty(uniqueID))
             uniqueID = System.Guid.NewGuid().ToString();
     }
+    private void Awake()
+{
+    if (Application.isPlaying && string.IsNullOrEmpty(uniqueID))
+    {
+        Debug.LogError($"{name} has no uniqueID! Save system will break.");
+    }
+}
 }

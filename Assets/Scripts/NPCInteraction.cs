@@ -53,6 +53,16 @@ public class NPCInteraction : MonoBehaviour
     [Header("Events")]
     public UnityEvent onItemGivenToNPC;
 
+    [Header("Boss Settings")]
+    public bool isBoss = false;
+    [Header("King Settings")]
+    public bool isKing = false;
+
+    [Header("Code Piece (Optional)")]
+public bool givesCodeDigit = false;
+[Range(0, 4)] public int codeIndex; // 0 = first digit, 4 = last digit
+[Range(0, 9)] public int codeDigit;
+
     private bool isPlayerInRange = false;
     private bool isDialogueOpen = false;
     private bool isTyping = false;
@@ -78,6 +88,7 @@ public class NPCInteraction : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>(); // NEW
         anim = GetComponent<Animator>();      // NEW (optional)
+        playerInventory = Inventory.Instance;
     }
 
     void OnTriggerEnter(Collider other)
@@ -212,6 +223,19 @@ public class NPCInteraction : MonoBehaviour
 
     void HandleEndOfDialogue()
     {
+        if (isBoss)
+    {
+        GameProgress.Instance.talkedToBoss = true;
+    }
+        if(isKing)
+        {
+           GameProgress.Instance.talkedToKing = true; 
+        }
+    if (givesCodeDigit)
+    {
+        GameProgress.Instance.medievalCode[codeIndex] = codeDigit;
+    }
+
         if (npcType == NPCType.Giver)
         {
             ShowGiveButton();
@@ -262,6 +286,7 @@ public class NPCInteraction : MonoBehaviour
 
     public void ButtonGiveItem()
 {
+    playerInventory = Inventory.Instance;
     if (playerInventory == null)
     {
         Debug.LogError("Player inventory is NULL!");
