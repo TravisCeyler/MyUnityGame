@@ -8,6 +8,10 @@ TagManager:
   - NPC
   - Pickup
   - PauseMenu
+  - Grass
+  - Sand
+  - Stone
+  - Wood
   layers:
   - Default
   - TransparentFX
