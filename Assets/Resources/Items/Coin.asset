@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c069f85732a9ae4180d6a8f53538e91, type: 3}
-  m_Name: Coin data
+  m_Name: Coin
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Coin
   icon: {fileID: 21300000, guid: 1d22800a2c3105840bbac346df53ac48, type: 3}

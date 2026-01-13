@@ -12,8 +12,14 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(gameSceneName);
-        // SaveSystem will load automatically in the scene
+        if (SaveSystem.Instance == null)
+        {
+            Debug.LogError("SaveSystem not found!");
+            return;
+        }
+
+        // Let SaveSystem handle everything
+        SaveSystem.Instance.LoadGameFromMenu();
     }
 
     public void QuitGame()

@@ -134,15 +134,20 @@ public class PauseMenu : MonoBehaviour
     // ----------------------------------------------------
 
     public void SaveGame()
+{
+    if (SaveSystem.Instance == null)
     {
-        Debug.Log("Saving game...");
-        SaveSystem.Instance.SaveGame();
+        Debug.LogError("SaveSystem not found!");
+        return;
     }
+
+    SaveSystem.Instance.SaveGame();
+}
 
     public void LoadGame()
     {
         Debug.Log("Loading game...");
-        SaveSystem.Instance.LoadGame();
+        SaveSystem.Instance.LoadGameFromMenu();
         Resume();  // close menu after loading
     }
 
@@ -152,7 +157,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

@@ -141,7 +141,7 @@ public class PlayerPickup : MonoBehaviour
         heldObject = null;
     }
 
-    void DropSelectedInventoryItem()
+   void DropSelectedInventoryItem()
 {
     if (inventory == null || hotbarUI == null || holdPoint == null) return;
 
@@ -153,12 +153,32 @@ public class PlayerPickup : MonoBehaviour
         return;
     }
 
-    if (inventory.slots[slot].item == null || inventory.slots[slot].item == null)
+    InventoryItem itemSlot = inventory.slots[slot].item;
+    if (itemSlot == null || itemSlot.itemData == null)
     {
         Debug.Log("Selected slot is empty.");
         return;
     }
 
-    inventory.DropItem(slot, holdPoint);
+    // Spawn the prefab at the hold point
+    GameObject dropped = Instantiate(
+        itemSlot.itemData.prefabReference,
+        holdPoint.position,
+        Quaternion.identity
+    );
+
+    // Give the dropped object a NEW uniqueID so it won't be considered collected
+    WorldItem worldItem = dropped.GetComponent<WorldItem>();
+    if (worldItem != null)
+        worldItem.uniqueID = System.Guid.NewGuid().ToString();
+
+    // Reduce inventory
+    itemSlot.amount--;
+    if (itemSlot.amount <= 0)
+        inventory.slots[slot].item = null;
+
+    // Refresh hotbar UI
+    inventory.ForceRefresh();
 }
+
 }
